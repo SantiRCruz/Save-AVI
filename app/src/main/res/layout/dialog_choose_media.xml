@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gray">
+
+
+    <ImageView
+        android:id="@+id/imgExit"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_baseline_close_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Choose"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/imgGallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black_degrade"
+        app:cardCornerRadius="100dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintEnd_toStartOf="@+id/imgCamera"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <ImageView
+            android:id="@+id/galleryIcon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:padding="16dp"
+            android:src="@drawable/ic_baseline_photo_library_24" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="60dp"
+        android:text="Gallery"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imgGallery"
+        app:layout_constraintStart_toStartOf="@+id/imgGallery"
+        app:layout_constraintTop_toBottomOf="@+id/imgGallery" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/imgCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black_degrade"
+        app:cardCornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imgGallery"
+        app:layout_constraintTop_toTopOf="@+id/imgGallery">
+
+        <ImageView
+            android:id="@+id/cameraIcon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:padding="16dp"
+            android:src="@drawable/ic_baseline_camera_24" />
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/txtCameraIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Camera"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imgCamera"
+        app:layout_constraintStart_toStartOf="@+id/imgCamera"
+        app:layout_constraintTop_toBottomOf="@+id/imgCamera" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

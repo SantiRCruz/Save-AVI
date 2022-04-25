@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/imageFragment">
+
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="com.example.saveavi.ui.video.VideoFragment"
+        android:label="fragment_video"
+        tools:layout="@layout/fragment_video" >
+        <action
+            android:id="@+id/action_videoFragment_to_createVideoFragment"
+            app:destination="@id/createVideoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.example.saveavi.ui.image.ImageFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" >
+        <action
+            android:id="@+id/action_imageFragment_to_createImageFragment"
+            app:destination="@id/createImageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createImageFragment"
+        android:name="com.example.saveavi.ui.image.CreateImageFragment"
+        android:label="fragment_create_image"
+        tools:layout="@layout/fragment_create_image" />
+    <fragment
+        android:id="@+id/createVideoFragment"
+        android:name="com.example.saveavi.ui.video.CreateVideoFragment"
+        android:label="fragment_create_video"
+        tools:layout="@layout/fragment_create_video" />
+    <fragment
+        android:id="@+id/audioFragment"
+        android:name="com.example.saveavi.ui.audio.AudioFragment"
+        android:label="fragment_audio"
+        tools:layout="@layout/fragment_audio" >
+        <action
+            android:id="@+id/action_audioFragment_to_createAudioFragment"
+            app:destination="@id/createAudioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAudioFragment"
+        android:name="com.example.saveavi.ui.audio.CreateAudioFragment"
+        android:label="fragment_create_audio"
+        tools:layout="@layout/fragment_create_audio" />
+</navigation>
