@@ -11,9 +11,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.stateIn
 
-class AudioViewModel(private val dao : AudioDao):ViewModel() {
+class AudioViewModel(private val dao: AudioDao) : ViewModel() {
 
-    fun fetchAudios():StateFlow<Result<List<AudioEntity>>> = flow {
+    fun fetchAudios(): StateFlow<Result<List<AudioEntity>>> = flow {
         kotlin.runCatching {
             dao.getAudios()
         }.onSuccess {
@@ -27,7 +27,7 @@ class AudioViewModel(private val dao : AudioDao):ViewModel() {
         initialValue = Result.Loading()
     )
 
-    fun saveAudio(audioEntity: AudioEntity):StateFlow<Result<Long>> = flow {
+    fun saveAudio(audioEntity: AudioEntity): StateFlow<Result<Long>> = flow {
         kotlin.runCatching {
             dao.insertAudio(audioEntity)
         }.onSuccess {
@@ -41,9 +41,8 @@ class AudioViewModel(private val dao : AudioDao):ViewModel() {
         initialValue = Result.Loading()
     )
 
-}
-class AudioViewModelFactory(private val dao : AudioDao):ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return modelClass.getConstructor(AudioDao::class.java).newInstance(dao)
+    class AudioViewModelFactory(private val dao: AudioDao) : ViewModelProvider.Factory {
+        override fun <T : ViewModel> create(modelClass: Class<T>): T {
+            return modelClass.getConstructor(AudioDao::class.java).newInstance(dao)
+        }
     }
-}

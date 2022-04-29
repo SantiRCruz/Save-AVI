@@ -104,7 +104,9 @@ class CreateImageFragment : Fragment(R.layout.fragment_create_image) {
             viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED){
                 viewModel.saveImage(ImageEntity(0,uriResult.toString(),binding.titleEdt.text.toString(),binding.DescriptionEdt.text.toString())).collect {
                     when(it){
-                        is Result.Loading ->{}
+                        is Result.Loading ->{
+
+                        }
                         is Result.Success ->{
                             Snackbar.make(binding.root,"saved correctly",Snackbar.LENGTH_SHORT).show()
                             findNavController().popBackStack()
